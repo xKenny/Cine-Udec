@@ -7,7 +7,7 @@ package cine.udec.datos;
 
 /**
  *
- * @author kenny & David
+ * @author kenny & David 
  */
 public class Sillas {
     

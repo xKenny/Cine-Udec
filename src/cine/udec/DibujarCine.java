@@ -8,7 +8,7 @@ package cine.udec;
 
 /**
  *
- * @author kenny & David
+ * @author kenny & David 
  */
 public class DibujarCine {
    

@@ -9,7 +9,7 @@ import cine.udec.datos.DatosSala;
 
 /**
  *
- * @author kenny & David
+ * @author kenny & David 
  */
 public class main {
     
