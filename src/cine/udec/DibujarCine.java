@@ -12,31 +12,30 @@ import java.util.Scanner;
  * @author kenny
  */
 public class DibujarCine {
-    private Scanner teclado;
+   
+    /*atributos de las clase*/
+    private int filas;
+    private int columnas;
     /**
      * constructor
+     * @param filas
+     * @param columnas
      */
-    public DibujarCine(){
-        teclado = new Scanner(System.in);
-        titulo();
+    public DibujarCine(int filas, int columnas){
+       this.filas = filas;
+       this.columnas = columnas;
     }
     /**
      * este metodo da el mensaje de bienvenida
      */
-    private void titulo(){
-        byte filas,columnas;
+    public void titulo(){
         System.out.println("-------------- BIENVENIDO------------------");
         System.out.println("---------------CINE UDEC------------------");
-        System.out.println("\nIngrese el numero de filas:");
-        filas = teclado.nextByte();
-        System.out.println("\nIngrese el numero de columnas:");
-        columnas = teclado.nextByte();
-        sala(filas,columnas);
     }    
     /**
      * con este metodo dibujamos la sala de cine en consola
      */
-    private void sala(byte filas, byte columnas){
+    public void sala(){
         byte cont= 1, i, j;
         System.out.println();
         System.out.println("          ____________________          ");
@@ -55,5 +54,22 @@ public class DibujarCine {
             System.out.println();
            }
         }
+    /*metodos Getter and Setter de los atributos*/
+    public int getFilas() {
+        return filas;
+    }
+
+    public void setFilas(int filas) {
+        this.filas = filas;
+    }
+
+    public int getColumnas() {
+        return columnas;
+    }
+
+    public void setColumnas(int columnas) {
+        this.columnas = columnas;
+    }
+    
     }
 

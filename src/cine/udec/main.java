@@ -6,6 +6,7 @@
 package cine.udec;
 
 import cine.udec.datos.DatosSala;
+import cine.udec.datos.Sillas;
 
 /**
  *
@@ -17,8 +18,8 @@ public class main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        DibujarCine dibujarCine = new DibujarCine();
         DatosSala datosSala = new DatosSala();
+       
     }
     
 }
