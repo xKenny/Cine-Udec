@@ -7,6 +7,7 @@ package cine.udec.datos;
 
 /**
  *
+<<<<<<< HEAD
  * @author kenny & David 
  */
 public class Sillas {
@@ -51,6 +52,41 @@ public class Sillas {
            return 8000;
        }
     }
+=======
+ * @author kenny
+ */
+public class Sillas {
+    
+    /**
+     * Atributos de la clase
+     */
+    private int nroSilla;
+    private String nombre;
+    private int edad;
+    private int nroDocumento;
+    private String genero;
+    
+    /**
+     *constructor
+     * @param nroSilla
+     * @param nombre
+     * @param edad
+     * @param nroDocumento
+     * @param genero
+     */
+    public Sillas(int nroSilla, String nombre, int edad, int nroDocumento, String genero){
+        this.nroSilla = nroSilla;
+        this.nombre = nombre;
+        this.edad = edad;
+        this.nroDocumento = nroDocumento;
+        this.genero = genero;
+    }
+    public String mostrarDato(){
+        return "La silla "+nroSilla+" ha sido comprada por "+nombre+" de edad "+edad+" identificado con el numero de documento "+nroDocumento+" de genero "+genero+"";
+    }
+    
+    
+>>>>>>> origin/master
     
     /*Metodos Getter and Setter*/
     public String getNombre() {

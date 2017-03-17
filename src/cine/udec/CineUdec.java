@@ -5,10 +5,18 @@
  */
 package cine.udec;
 
+<<<<<<< HEAD
 
 /**
  *
  * @author kenny & David 
+=======
+import cine.udec.datos.DatosSala;
+
+/**
+ *
+ * @author kenny
+>>>>>>> origin/master
  */
 public class CineUdec {
         /**
