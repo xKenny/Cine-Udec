@@ -28,9 +28,9 @@ public class DibujarCine {
     public DibujarCine(int filas, int columnas, int general, int prefere, int ejecuti){
        this.filas = filas;
        this.columnas = columnas;
-       this.filas = general;
-       this.columnas = prefere;
-       this.filas = ejecuti;
+       this.general = general;
+       this.prefere = prefere;
+       this.ejecuti = ejecuti;
     }
     /**
      * este metodo da el mensaje de bienvenida
