@@ -35,51 +35,40 @@ public class DatosSala {
         general = teclado.nextInt();
         cont=cont+general;
         validarFilas(cont, filas);
-        System.out.print("cuantas filas preferenciales desea?: ");
-        prefere = teclado.nextInt();
-        cont=cont+prefere;
-        validarFilas(cont, filas);
-        System.out.print("cuantas filas ejecutivas desea?: ");
-        ejecuti = teclado.nextInt();
-        cont=cont+ejecuti;
-        validarFilas(cont, filas);
-        DibujarCine dibujarCine= new DibujarCine(filas,columnas,general,prefere,ejecuti);
+        if(cont<filas){
+            System.out.print("cuantas filas preferenciales desea?: ");
+            prefere = teclado.nextInt();
+            cont=cont+prefere;
+            validarFilas(cont, filas);
+        }else{
+            prefere=0;
+        }
+        DibujarCine dibujarCine= new DibujarCine(filas,columnas,general,prefere);
         dibujarCine.titulo();
         dibujarCine.sala();
         sillasTotales=filas*columnas;
     }
     /**
-     * metodo que almacena los datos del usuario y efectua la compra
+     * metodo que efectua la compra de la silla
      */
    private void preguntar(){
         Sillas[] sillas = new Sillas[sillasTotales];
-        int silla, edad, nroDocumento;
-        String nombre, genero, comprar, error;
+        int silla= sillasTotales+1;
+        String nombre;
+        boolean error = true;
         do{
-        System.out.print("Que silla desea?: ");
-        silla = teclado.nextInt();
-        if(silla>sillasTotales){
-            System.out.print("numero de silla no valido");
-            break;
-        }
-        System.out.print("Ingrese su nombre: ");
-        nombre = teclado.next();
-        System.out.print("ingrese su edad: ");
-        edad = teclado.nextInt();
-        System.out.print("ingrese su numero de documento: ");
-        nroDocumento = teclado.nextInt();
-        System.out.print("ingrese su genero(masculino/femenino): ");
-        genero = teclado.next();
-        sillas[silla] = new Sillas(silla,nombre, edad, nroDocumento, genero);
-        System.out.println(sillas[silla].pelicula());
-        System.out.println("El valor de la boleta es de"+sillas[silla].validarPrecio()+"");
-        System.out.println("Desea confirmar la compra?(si/no): ");
-        comprar = teclado.next();
-        if("si".equals(comprar))
-            System.out.println(sillas[silla].mostrarDato());
-        System.out.println("Desea realizar otra compra?(si/no): ");
-        error = teclado.next();
-        }while("si".equals(error));   
+            while(error){
+                System.out.print("Que silla desea?: ");
+                 silla = teclado.nextInt();
+                 error = silla>sillasTotales;
+                 if(silla>sillasTotales)
+                     System.out.println("error esta silla no existe");
+            }
+            sillas[silla] = new Sillas(silla);
+            sillas[silla].datosSilla();
+            System.out.println("Desea ingresar otra compra?(si/no): ");
+             }while("si".equals(teclado.next()));
+        System.out.println("vuelva pronto");
     }
    /*metodo que valida si hay filas disponibles*/
     private void validarFilas(int cont, int filas){

@@ -16,21 +16,18 @@ public class DibujarCine {
     private int columnas;
     private int general;
     private int prefere;
-    private int ejecuti;
     /**
      * constructor
      * @param filas
      * @param columnas
      * @param general
      * @param prefere
-     * @param ejecuti
      */
-    public DibujarCine(int filas, int columnas, int general, int prefere, int ejecuti){
+    public DibujarCine(int filas, int columnas, int general, int prefere){
        this.filas = filas;
        this.columnas = columnas;
        this.general = general;
        this.prefere = prefere;
-       this.ejecuti = ejecuti;
     }
     /**
      * este metodo da el mensaje de bienvenida
@@ -57,9 +54,22 @@ public class DibujarCine {
                 }
                 cont = (byte) (cont+1);
             }
-            System.out.println();
+            System.out.println(tipoFila(i));
             System.out.println();
            }
+        }
+    /*metodo para imprimir el tipo de fila*/
+        public String tipoFila(byte i){
+            int prefe;
+            prefe = prefere+general;
+            if(general>=i){
+                return "fila general";
+            }else{
+                if(prefe>=i){
+                    return "fila preferencial";
+                }
+            }
+            return "fila ejecutiva";
         }
     /*metodos Getter and Setter de los atributos*/
     public int getFilas() {
@@ -92,15 +102,6 @@ public class DibujarCine {
 
     public void setPrefere(int prefere) {
         this.prefere = prefere;
-    }
-
-    public int getEjecuti() {
-        return ejecuti;
-    }
-
-    public void setEjecuti(int ejecuti) {
-        this.ejecuti = ejecuti;
-
     }
 }
 

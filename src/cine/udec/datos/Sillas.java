@@ -5,84 +5,49 @@
  */
 package cine.udec.datos;
 
+import java.util.Scanner;
+
 /**
  * @author kenny & David 
  */
 public class Sillas {
-    
+    private Scanner teclado;
     /**
      * Atributos de la clase
      */
     private int nroSilla;
-    private String nombre;
-    private int edad;
-    private int nroDocumento;
-    private String genero;
     
     /**
      *constructor
      * @param nroSilla
-     * @param nombre
-     * @param edad
-     * @param nroDocumento
-     * @param genero
      */
-    public Sillas(int nroSilla, String nombre, int edad, int nroDocumento, String genero){
+    public Sillas(int nroSilla){
+        teclado = new Scanner(System.in);
         this.nroSilla = nroSilla;
-        this.nombre = nombre;
-        this.edad = edad;
-        this.nroDocumento = nroDocumento;
-        this.genero = genero;
+
     }
-    /*metodo que retorna la informacion del comprador*/
-    public String mostrarDato(){
-        return "La silla "+nroSilla+" ha sido comprada por "+nombre+" de edad "+edad+" identificado con el numero de documento "+nroDocumento+" de genero "+genero+"";
-    }
-    /*metodo que retorna la informacion de la pelicula*/
-    public String pelicula(){
-        return "Pelicula:TITANIC\nDirector:James Cameron\nDuracion:180m\nAño:1994";
-    }
-    /*metodo que valida si el cliente es niño o adulto*/
-    public double validarPrecio(){
-       if(edad<12){
-           return 5000;
-       }else{
-           return 8000;
-       }
+    public void datosSilla(){
+        String nombre, genero, desea;
+        int edad, nroDocumento;
+        System.out.print("Ingrese su nombre: ");
+        nombre = teclado.next();
+        System.out.print("Ingrese su edad: ");
+        edad = teclado.nextInt();
+        System.out.print("Ingrese su numero de documento: ");
+        nroDocumento = teclado.nextInt();
+        System.out.print("Ingrese su genero: ");
+        genero = teclado.next();
+        System.out.println("\nPelicula:TITANIC\nDirector:James Cameron\nDuracion:195min\nAño:1997");
+        Persona persona = new Persona(nombre,edad,nroDocumento,genero);
+        System.out.println("El precio de la boleta es de :"+persona.validarPrecio()+"");
+        System.out.print("desea hacer la compra?: (si/no)");
+        desea = teclado.next();
+        if("si".equals(desea)){
+            System.out.println("la boleta en la silla numero "+nroSilla+" ha sido comprada por "+persona.mostrar()+"");
+        }
+        
     }
     /*Metodos Getter and Setter*/
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public int getEdad() {
-        return edad;
-    }
-
-    public void setEdad(byte edad) {
-        this.edad = edad;
-    }
-
-    public int getNroDocumento() {
-        return nroDocumento;
-    }
-
-    public void setNroDocumento(int nroDocumento) {
-        this.nroDocumento = nroDocumento;
-    }
-
-    public String getGenero() {
-        return genero;
-    }
-
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
-
     public int getNroSilla() {
         return nroSilla;
     }
